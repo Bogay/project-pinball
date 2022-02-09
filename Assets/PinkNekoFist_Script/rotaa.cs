@@ -15,23 +15,50 @@ public class rotaa : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {      
-        if(Input.GetKeyDown(KeyCode.X)){
-            RT = true;
-        }
-        if(Input.GetKeyUp(KeyCode.X)){
-            RT = false;
+    {
+        if(rota.trigger == false)
+        {
+            if(Input.GetKeyDown(KeyCode.X)){
+                RT = true;
+            }
+            if(Input.GetKeyUp(KeyCode.X)){
+                RT = false;
+            }
+
+            if(RT == true&& rb.rotation >= 150){
+                rb.angularVelocity = -360*RotaSpeed;
+            }
+            else if(RT == false&& rb.rotation <= 210){
+                rb.angularVelocity = 360*RotaSpeed;
+            }
+            else{
+                rb.angularVelocity = 0;
+            }
         }
 
-        if(RT == true&& rb.rotation >= 150){
-            rb.angularVelocity = -360*RotaSpeed;
+        if (rota.trigger == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                RT = true;
+            }
+            if (Input.GetKeyUp(KeyCode.Z))
+            {
+                RT = false;
+            }
+
+            if (RT == true && rb.rotation >= 150)
+            {
+                rb.angularVelocity = -360 * RotaSpeed;
+            }
+            else if (RT == false && rb.rotation <= 210)
+            {
+                rb.angularVelocity = 360 * RotaSpeed;
+            }
+            else
+            {
+                rb.angularVelocity = 0;
+            }
         }
-        else if(RT == false&& rb.rotation <= 210){
-            rb.angularVelocity = 360*RotaSpeed;
-        }
-        else{
-            rb.angularVelocity = 0;
-        }
-        
     }
 }

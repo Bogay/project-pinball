@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 41509904}
   - component: {fileID: 41509903}
   - component: {fileID: 41509902}
+  - component: {fileID: 41509905}
   m_Layer: 0
   m_Name: voidR
   m_TagString: void
@@ -232,6 +233,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &41509905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41509901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192fcadfc3f73430c8d26cd58c719846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &118218309
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2149,10 @@ PrefabInstance:
     - target: {fileID: 8220156220152976805, guid: e9f84fb2010d8414381afc96dfea5380, type: 3}
       propertyPath: m_Name
       value: ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220156220152976805, guid: e9f84fb2010d8414381afc96dfea5380, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8220156220152976807, guid: e9f84fb2010d8414381afc96dfea5380, type: 3}
       propertyPath: m_RootOrder
