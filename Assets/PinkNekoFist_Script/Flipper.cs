@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class Flipper : MonoBehaviour
 {
-    public KeyCode triggerKey;
     [SerializeField]
     private float initialAngle;
     [SerializeField]
     private float finalAngle;
     [SerializeField]
     private float speed;
+    [HideInInspector]
+    public KeyCode triggerKey;
 
     private HingeJoint2D joint2D;
 
