@@ -153,9 +153,9 @@ GameObject:
   m_Component:
   - component: {fileID: 578918780067917944}
   - component: {fileID: 5307386640240591823}
-  - component: {fileID: 6996285601599828465}
   - component: {fileID: 3913385741672078224}
   - component: {fileID: 4105776647689118094}
+  - component: {fileID: 7925770527866661433}
   m_Layer: 0
   m_Name: Cabinet
   m_TagString: Untagged
@@ -182,20 +182,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5307386640240591823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 578918780067917951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef2399a675ffcb4488117bc30abc927e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  left: {fileID: 5433385028344046635}
-  right: {fileID: 5433385026918373577}
---- !u!114 &6996285601599828465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,6 +225,21 @@ MonoBehaviour:
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
+--- !u!114 &7925770527866661433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578918780067917951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30dc7722a64577f49a1069afdf88f25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPosition: {x: 0, y: 0, z: 0}
+  me: 0
+  opponent: 0
 --- !u!1 &578918780911127930
 GameObject:
   m_ObjectHideFlags: 0

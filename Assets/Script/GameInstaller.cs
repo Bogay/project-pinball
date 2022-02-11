@@ -8,7 +8,7 @@ public class GameInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        var players = Resources.FindObjectsOfTypeAll<Player>();
+        var players = FindObjectsOfType<Player>();
         this.repository.BindPlayers(players);
         Container.BindInstance(this.repository).AsSingle();
     }
