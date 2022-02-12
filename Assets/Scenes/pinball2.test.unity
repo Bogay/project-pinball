@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 1939939751}
   - component: {fileID: 1939939750}
   - component: {fileID: 1939939752}
+  - component: {fileID: 1939939753}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -845,6 +846,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repository: {fileID: 11400000, guid: 28fa915cac7f47643a005f76d59e8d10, type: 2}
+--- !u!114 &1939939753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939939749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce82340813b0a274abbdd77616b699c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneClipArray: {fileID: 11400000, guid: 7f89fc82aa0014c4f83ff7a2ec4c1772, type: 2}
 --- !u!1001 &578918780647323516
 PrefabInstance:
   m_ObjectHideFlags: 0
