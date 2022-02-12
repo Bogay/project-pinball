@@ -18,5 +18,6 @@ public class CabinetInstaller : MonoInstaller<CabinetInstaller>
         Container.BindInstance(this.repository[this.opponent]).WithId("opponent").AsCached();
         var playerMe = this.repository[this.me];
         Container.BindInstance(playerMe).WithId("me").AsCached();
+        Container.Bind<SkillHolder>().FromComponentsInChildren();
     }
 }

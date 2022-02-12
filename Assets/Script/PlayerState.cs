@@ -1,4 +1,3 @@
-using UniRx;
 using UnityEngine;
 
 
@@ -11,4 +10,6 @@ public class PlayerState : ScriptableObject
     public KeyCode left { get; private set; }
     [field: SerializeField]
     public KeyCode right { get; private set; }
+    [field: SerializeField]
+    public KeyCode trigger { get; private set; }
 }

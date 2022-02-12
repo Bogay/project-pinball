@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cef67885c502074c9bee34bba1cf9ac, type: 3}
-  m_Name: P1
+  m_Script: {fileID: 11500000, guid: 290e57b13b292864ebfca702b34e8a78, type: 3}
+  m_Name: TestSkill
   m_EditorClassIdentifier: 
-  <maxHP>k__BackingField: 100
-  <left>k__BackingField: 97
-  <right>k__BackingField: 100
-  <trigger>k__BackingField: 115
+  <skillName>k__BackingField: test
+  <sprite>k__BackingField: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
