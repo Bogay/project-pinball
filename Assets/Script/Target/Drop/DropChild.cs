@@ -2,37 +2,40 @@ using UnityEngine;
 using Zenject;
 using UniRx;
 
-public class DropChild : MonoBehaviour
+namespace Pinball.Target
 {
-    [SerializeField]
-    private int damage;
-    [Inject]
-    private Drop parent;
-    [Inject(Id = "opponent")]
-    private Player opponent;
-    public BoolReactiveProperty hit { get; private set; } = new BoolReactiveProperty();
-
-    void Start()
+    public class DropChild : MonoBehaviour
     {
-        // Register self on parent
-        this.parent.Add(this);
+        [SerializeField]
+        private int damage;
+        [Inject]
+        private Drop parent;
+        [Inject(Id = "opponent")]
+        private Player opponent;
+        public BoolReactiveProperty hit { get; private set; } = new BoolReactiveProperty();
 
-        var sprite = GetComponent<SpriteRenderer>();
-        this.hit.Subscribe(h =>
+        void Start()
         {
-            sprite.color = h ? Color.red : Color.white;
-        }).AddTo(this);
-    }
+            // Register self on parent
+            this.parent.Add(this);
 
-    // TODO: Add VFX
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (this.hit.Value) return;
+            var sprite = GetComponent<SpriteRenderer>();
+            this.hit.Subscribe(h =>
+            {
+                sprite.color = h ? Color.red : Color.white;
+            }).AddTo(this);
+        }
 
-        if (other.gameObject.CompareTag("Ball"))
+        // TODO: Add VFX
+        private void OnCollisionEnter2D(Collision2D other)
         {
-            this.hit.Value = true;
-            this.opponent.hp.Value -= this.damage;
+            if (this.hit.Value) return;
+
+            if (other.gameObject.CompareTag("Ball"))
+            {
+                this.hit.Value = true;
+                this.opponent.hp.Value -= this.damage;
+            }
         }
     }
 }
