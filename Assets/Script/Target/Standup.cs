@@ -16,7 +16,6 @@ namespace Pinball.Target
         {
             if (other.gameObject.CompareTag("Ball"))
             {
-                Debug.Log($"HP: {this.opponent.hp.Value}");
                 this.opponent.hp.Value -= this.damage;
             }
         }
