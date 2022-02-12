@@ -12,4 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1efe4e21df5d74e89c5cf35d47d76f, type: 3}
   m_Name: Audio clip array
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: hit1
+    clip: {fileID: 8300000, guid: 3816ff1eb7ad6654ab42937bbd77313f, type: 3}
+    volume: 0.68
+    pitch: 1.04
+    loop: 0
+  - name: hit2
+    clip: {fileID: 8300000, guid: 4f503e8d684fed44c8dba01d67782e39, type: 3}
+    volume: 0.687
+    pitch: 1.04
+    loop: 0
+  - name: hit3
+    clip: {fileID: 8300000, guid: b6de0ca9ce6130b4f9ea9abe37b870db, type: 3}
+    volume: 0.702
+    pitch: 1.14
+    loop: 0
+  - name: drop1
+    clip: {fileID: 8300000, guid: 62d1c8122b3fa57498023b394a40717c, type: 3}
+    volume: 0.702
+    pitch: 1.1
+    loop: 0
+  - name: drop2
+    clip: {fileID: 8300000, guid: d4528b04ad8935f42a0906649a8cf12e, type: 3}
+    volume: 0.702
+    pitch: 1.23
+    loop: 0
