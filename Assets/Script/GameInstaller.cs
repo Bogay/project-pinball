@@ -2,6 +2,7 @@ using UnityEngine;
 using Zenject;
 using UniRx;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameInstaller : MonoInstaller
 {
@@ -31,6 +32,9 @@ public class GameInstaller : MonoInstaller
         return (_) =>
         {
             this.result.win = playerIndex;
+            // TODO: This line should not be here
+            // Remove tweens target on main camera
+            Camera.main.DOKill();
             SceneManager.LoadScene("End");
         };
     }

@@ -25,4 +25,12 @@ public class Flipper : MonoBehaviour
         motor.motorSpeed = speed;
         this.joint2D.motor = motor;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            SceneAudioManager.instance.PlayByName("drop2");
+        }
+    }
 }

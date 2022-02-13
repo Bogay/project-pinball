@@ -17,6 +17,11 @@ namespace Pinball.Target
         [Inject(Id = "opponent")]
         private Player opponent;
 
+        private void Start()
+        {
+            transform.DOKill();
+        }
+
         public void Add(DropChild child)
         {
             this.children.Add(child);
