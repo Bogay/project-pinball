@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using Zenject;
+using DG.Tweening;
 
 namespace Pinball.Target
 {
@@ -10,9 +11,16 @@ namespace Pinball.Target
     {
         [SerializeField]
         private int damage;
+        [SerializeField]
+        private float delay = 1;
         private List<DropChild> children = new List<DropChild>();
         [Inject(Id = "opponent")]
         private Player opponent;
+
+        private void Start()
+        {
+            transform.DOKill();
+        }
 
         public void Add(DropChild child)
         {
@@ -32,11 +40,19 @@ namespace Pinball.Target
             }
             // All child are hit
             this.opponent.hp.Value -= this.damage;
-            // Reset children
-            foreach (var child in this.children)
-            {
-                child.hit.Value = false;
-            }
+            Camera.main.DOShakePosition(0.1f, 1);
+            // Delay invoke
+            Observable
+                .Timer(System.TimeSpan.FromSeconds(this.delay))
+                .Subscribe(_ =>
+                {
+                    // Reset children
+                    foreach (var child in this.children)
+                    {
+                        child.hit.Value = false;
+                    }
+                })
+                .AddTo(this);
         }
     }
 }
