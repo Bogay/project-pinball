@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using Zenject;
+using DG.Tweening;
 
 namespace Pinball.Target
 {
@@ -34,6 +35,7 @@ namespace Pinball.Target
             }
             // All child are hit
             this.opponent.hp.Value -= this.damage;
+            Camera.main.DOShakePosition(0.1f, 1);
             // Delay invoke
             Observable
                 .Timer(System.TimeSpan.FromSeconds(this.delay))
