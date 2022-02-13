@@ -77,3 +77,5 @@ crashlytics-build.properties
 /Assets/Scenes/**.test.unity
 /Assets/Scenes/**.test.unity.meta
 
+.DS_Store
+
