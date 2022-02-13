@@ -10,6 +10,8 @@ namespace Pinball.Target
     {
         [SerializeField]
         private int damage;
+        [SerializeField]
+        private float delay = 1;
         private List<DropChild> children = new List<DropChild>();
         [Inject(Id = "opponent")]
         private Player opponent;
@@ -32,11 +34,18 @@ namespace Pinball.Target
             }
             // All child are hit
             this.opponent.hp.Value -= this.damage;
-            // Reset children
-            foreach (var child in this.children)
-            {
-                child.hit.Value = false;
-            }
+            // Delay invoke
+            Observable
+                .Timer(System.TimeSpan.FromSeconds(this.delay))
+                .Subscribe(_ =>
+                {
+                    // Reset children
+                    foreach (var child in this.children)
+                    {
+                        child.hit.Value = false;
+                    }
+                })
+                .AddTo(this);
         }
     }
 }

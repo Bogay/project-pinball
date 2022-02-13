@@ -4,10 +4,15 @@ using UniRx;
 
 namespace Pinball.Target
 {
+    [RequireComponent(typeof(Collider2D))]
     public class DropChild : MonoBehaviour
     {
         [SerializeField]
         private int damage;
+        [SerializeField]
+        private Sprite normal;
+        [SerializeField]
+        private Sprite triggered;
         [Inject]
         private Drop parent;
         [Inject(Id = "opponent")]
@@ -22,7 +27,9 @@ namespace Pinball.Target
             var sprite = GetComponent<SpriteRenderer>();
             this.hit.Subscribe(h =>
             {
-                sprite.color = h ? Color.red : Color.white;
+                sprite.sprite = h ? this.triggered : this.normal;
+                // Disable collider if self is hit
+                GetComponent<Collider2D>().enabled = !h;
             }).AddTo(this);
         }
 
@@ -33,6 +40,7 @@ namespace Pinball.Target
 
             if (other.gameObject.CompareTag("Ball"))
             {
+                SceneAudioManager.instance.PlayByName("hit2");
                 this.hit.Value = true;
                 this.opponent.hp.Value -= this.damage;
             }
