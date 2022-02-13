@@ -2,4 +2,4 @@
 
 ## Credit
 
-- SE: [魔王魂](https://maou.audio/)
+[魔王魂](https://maou.audio/)：SE & BGM

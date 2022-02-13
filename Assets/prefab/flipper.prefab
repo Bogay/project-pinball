@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4859376805925964207}
   - component: {fileID: 9063238344861592487}
   m_Layer: 0
-  m_Name: flipper
+  m_Name: Flipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ HingeJoint2D:
   m_UseMotor: 1
   m_Motor:
     m_MotorSpeed: 0
-    m_MaximumMotorForce: 2500
+    m_MaximumMotorForce: 5000
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: -30
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialAngle: -30
   finalAngle: 30
-  speed: -600
+  speed: -900
   triggerKey: 0
 --- !u!60 &9063238344861592487
 PolygonCollider2D:

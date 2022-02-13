@@ -38,3 +38,8 @@ MonoBehaviour:
     volume: 0.702
     pitch: 1.23
     loop: 0
+  - name: bgm
+    clip: {fileID: 8300000, guid: 5bae684879cd48947bdf2dd35d62147b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1

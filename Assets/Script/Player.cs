@@ -8,6 +8,12 @@ public class Player : MonoBehaviour
     public ReactiveProperty<int> hp { get; private set; }
     public ReactiveProperty<Skill> skill { get; private set; }
 
+    // TODO: Move this to a better place...
+    private void Start()
+    {
+        SceneAudioManager.instance.PlayByName("bgm");
+    }
+
     // Set player state and initliaze runtime state
     public void SetState(PlayerState state)
     {
